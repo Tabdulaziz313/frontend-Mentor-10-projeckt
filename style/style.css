@@ -1,0 +1,116 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
+:root{
+    --grey: #949494;
+    --blue_800: #242742;
+    --blue_700:#36384D;
+    --red: #FF6155;
+    --gradient: #FF6A3A, #FF527B
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    background-color: var(--blue_700);
+}
+
+
+
+.main{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+
+}
+
+.form__img__desktop{
+  display: none;
+}
+
+.form__img__tabel{
+  display: none;
+}
+
+.form{
+  display: grid;
+  gap: 1rem;
+  background-color: white;
+  grid-template-columns: repeat(auto-fit , minmax(375px, 1fr));
+}
+
+.form__text{
+  padding: 1.5rem;
+}
+
+
+.form__text h1{
+  font-weight: 800;
+  color: var(--blue_800);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.form__img{
+  grid-area: 1;
+}
+
+
+
+
